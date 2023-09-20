@@ -18,7 +18,7 @@ public class hangman {
 
 
     public hangman() {
-        String wort ="Halllo";
+        String wort ="Hallo";
         String[] buchstabe;
         buchstabe = new String [wort.length()];
 
