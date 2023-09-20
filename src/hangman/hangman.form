@@ -31,6 +31,7 @@
           <icon value="knopf1.drawio.png"/>
           <opaque value="false"/>
           <text value=""/>
+          <verticalAlignment value="3"/>
           <visible value="true"/>
         </properties>
       </component>
@@ -41,9 +42,11 @@
           </grid>
         </constraints>
         <properties>
-          <caretColor color="-10920610"/>
+          <background color="-12236470"/>
+          <caretColor color="-1"/>
           <disabledTextColor color="-16777216"/>
           <font name="Courier New" size="28" style="2"/>
+          <foreground color="-2171170"/>
           <horizontalAlignment value="0"/>
         </properties>
       </component>
@@ -63,6 +66,7 @@
           <icon value="knopf2.drawio.png"/>
           <label value=""/>
           <text value=""/>
+          <verticalAlignment value="3"/>
         </properties>
       </component>
       <component id="d4f29" class="javax.swing.JLabel" binding="h">
@@ -86,9 +90,11 @@
           </grid>
         </constraints>
         <properties>
-          <caretColor color="-10920610"/>
+          <background color="-12236470"/>
+          <caretColor color="-1"/>
           <disabledTextColor color="-16777216"/>
           <font name="Arial Black" size="36" style="0"/>
+          <foreground color="-2171170"/>
           <horizontalAlignment value="0"/>
         </properties>
       </component>
@@ -99,12 +105,14 @@
           </grid>
         </constraints>
         <properties>
-          <caretColor color="-10920610"/>
+          <background color="-12236470"/>
+          <caretColor color="-65533"/>
           <columns value="0"/>
           <disabledTextColor color="-16777216"/>
           <editable value="false"/>
           <enabled value="true"/>
           <font name="Courier New" size="28" style="1"/>
+          <foreground color="-5308402"/>
           <margin top="2" left="6" bottom="2" right="6"/>
         </properties>
       </component>

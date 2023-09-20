@@ -41,7 +41,12 @@ public class hangman {
                 String versuchgroß=versuch.toUpperCase();
                 String versuchklein=versuch.toLowerCase();
                 if(wort.indexOf(versuchgroß)==-1 && wort.indexOf(versuchklein)==-1){
-                    versuchefeld.setText(versuchefeld.getText()+" "+versuch);
+                    String platzhalter2=versuchefeld.getText();
+                    if(!platzhalter2.equals("")) {
+                        versuchefeld.setText(versuchefeld.getText() + ", " + versuch);
+                    }else{
+                        versuchefeld.setText(versuch);
+                    }
                 }
                 if(versuch.length()==1) {
                     for (int i = 0; i < wort.length(); i++) {
