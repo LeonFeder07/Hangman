@@ -13,12 +13,15 @@ public class hangman {
     private JButton check;
     private JLabel h;
     private JTextField versuchefeld;
+    private JLabel label;
+    int versuchsanzahl=0;
 
 
     public hangman() {
         String wort ="Halllo";
         String[] buchstabe;
         buchstabe = new String [wort.length()];
+
         knopf.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -29,6 +32,8 @@ public class hangman {
                   buchstabe[i]= "_";
                   b1.setText(b1.getText()+" " +buchstabe[i]);
                    versuchefeld.setText("");
+                   buchstabenchecker.setText("");
+                   versuchsanzahl=0;
                }
 
             }
@@ -36,40 +41,54 @@ public class hangman {
         check.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                    versuchsanzahl=versuchsanzahl+1;
                 String versuch= buchstabenchecker.getText();
                 String versuchgroß=versuch.toUpperCase();
                 String versuchklein=versuch.toLowerCase();
-                if(wort.indexOf(versuchgroß)==-1 && wort.indexOf(versuchklein)==-1){
-                    String platzhalter2=versuchefeld.getText();
-                    if(!platzhalter2.equals("")) {
-                        versuchefeld.setText(versuchefeld.getText() + ", " + versuch);
-                    }else{
-                        versuchefeld.setText(versuch);
+                if(versuchklein.equals(wort.toLowerCase())) {
+                    b1.setText(wort);
+                    buchstabenchecker.setText("Du hast nur "+versuchsanzahl+" Versuch(e) gebraucht");
+
+                }else {
+                    if (wort.indexOf(versuchgroß) == -1 && wort.indexOf(versuchklein) == -1) {
+                        String platzhalter2 = versuchefeld.getText();
+                        if (!platzhalter2.equals("")) {
+                            versuchefeld.setText(versuchefeld.getText() + "," + versuch);
+                        } else {
+                            versuchefeld.setText(versuch);
+                        }
                     }
-                }
-                if(versuch.length()==1) {
+                    if (versuch.length() == 1) {
+                        for (int i = 0; i < wort.length(); i++) {
+                            String wortplatzhalter = String.valueOf(wort.charAt(i));
+                            if (wortplatzhalter.equals(versuchklein)) {
+                                buchstabe[i] = versuchklein;
+
+                            }
+                            if (wortplatzhalter.equals(versuchgroß)) {
+                                buchstabe[i] = versuchgroß;
+
+                            }
+
+                        }
+                    }
+
+
+                    b1.setText("");
+
                     for (int i = 0; i < wort.length(); i++) {
-                        String wortplatzhalter = String.valueOf(wort.charAt(i));
-                        if (wortplatzhalter.equals(versuchklein)) {
-                            buchstabe[i] = versuchklein;
 
-                        }
-                        if (wortplatzhalter.equals(versuchgroß)) {
-                            buchstabe[i] = versuchgroß;
-
-                        }
+                        b1.setText(b1.getText() + " " + buchstabe[i]);
+                        buchstabenchecker.setText("");
+                    }
+                    if(b1.getText().indexOf("_")==-1){
+                        b1.setText(wort);
+                        buchstabenchecker.setText("Du hast nur "+versuchsanzahl+" Versuch(e) gebraucht");
 
                     }
                 }
 
 
-                b1.setText("");
-                for(int i=0;i<wort.length();i++){
-
-                    b1.setText(b1.getText()+" " +buchstabe[i]);
-                    buchstabenchecker.setText("");
-                }
             }
         });
     }

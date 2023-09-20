@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="hangman.hangman">
-  <grid id="27dc6" binding="panel" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panel" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="5" vgap="10">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="9015" height="3649"/>
+      <xy x="45" y="21" width="1474" height="834"/>
     </constraints>
     <properties>
       <background color="-4473925"/>
-      <foreground color="-12236470"/>
+      <foreground color="-1"/>
+      <maximumSize width="1474" height="760"/>
+      <minimumSize width="1474" height="760"/>
+      <preferredSize width="1474" height="760"/>
+      <visible value="true"/>
     </properties>
     <border type="none"/>
     <children>
@@ -37,7 +41,7 @@
       </component>
       <component id="b30bf" class="javax.swing.JTextField" binding="buchstabenchecker">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="7" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+          <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="7" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
@@ -45,7 +49,7 @@
           <background color="-12236470"/>
           <caretColor color="-1"/>
           <disabledTextColor color="-16777216"/>
-          <font name="Courier New" size="28" style="2"/>
+          <font name="JetBrains Mono ExtraBold" size="32" style="1"/>
           <foreground color="-2171170"/>
           <horizontalAlignment value="0"/>
         </properties>
@@ -54,7 +58,7 @@
         <constraints>
           <grid row="1" column="1" row-span="2" col-span="1" vsize-policy="7" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <minimum-size width="520" height="320"/>
-            <preferred-size width="520" height="320"/>
+            <preferred-size width="146" height="320"/>
             <maximum-size width="520" height="320"/>
           </grid>
         </constraints>
@@ -85,7 +89,7 @@
       </component>
       <component id="7cdd8" class="javax.swing.JTextField" binding="b1">
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="7" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
+          <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="7" hsize-policy="7" anchor="8" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
@@ -93,9 +97,11 @@
           <background color="-12236470"/>
           <caretColor color="-1"/>
           <disabledTextColor color="-16777216"/>
+          <editable value="false"/>
           <font name="Arial Black" size="36" style="0"/>
           <foreground color="-2171170"/>
           <horizontalAlignment value="0"/>
+          <text value="Bitte auf &quot;neues Wort generieren&quot; drücken um das Spiel zustarten"/>
         </properties>
       </component>
       <component id="3af77" class="javax.swing.JTextField" binding="versuchefeld">
@@ -105,14 +111,14 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-12236470"/>
-          <caretColor color="-65533"/>
+          <background color="-5308402"/>
+          <caretColor color="-5308402"/>
           <columns value="0"/>
           <disabledTextColor color="-16777216"/>
           <editable value="false"/>
           <enabled value="true"/>
           <font name="Courier New" size="28" style="1"/>
-          <foreground color="-5308402"/>
+          <foreground color="-4473925"/>
           <margin top="2" left="6" bottom="2" right="6"/>
         </properties>
       </component>
@@ -135,6 +141,22 @@
           <horizontalTextPosition value="0"/>
           <icon value="heading.drawio.png"/>
           <text value=""/>
+        </properties>
+      </component>
+      <component id="c623" class="javax.swing.JLabel" binding="label">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="146" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-16777216"/>
+          <font name="Comic Sans MS" size="26" style="2"/>
+          <foreground color="-16777216"/>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
+          <labelFor value="b30bf"/>
+          <text value="Bitte einen Buchstaben oder ein Wort hier eingeben"/>
         </properties>
       </component>
     </children>
