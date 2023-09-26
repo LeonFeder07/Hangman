@@ -3,6 +3,8 @@ package hangman;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 
 public class hangman {
     private JPanel panel;
@@ -17,8 +19,16 @@ public class hangman {
     int versuchsanzahl=0;
 
 
+
+
     public hangman() {
-        String wort ="Hallo";
+        String[] wortliste;
+        wortliste= new String [50];
+        wortliste[1]="Oberfläche";
+        wortliste[2]="einloggen";
+        wortliste[3]="einloggen";
+
+        String wort =wortliste[2];
         String[] buchstabe;
         buchstabe = new String [wort.length()];
 
