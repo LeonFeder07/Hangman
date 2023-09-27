@@ -3,8 +3,15 @@ package hangman;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class hangman {
+
+
     private JPanel panel;
     private JLabel hangman;
     private JButton knopf;
@@ -15,16 +22,49 @@ public class hangman {
     private JTextField versuchefeld;
     private JLabel label;
     int versuchsanzahl=0;
+    String wort;
+    String[] buchstabe;
+    int fehleranzahl=0;
 
 
-    public hangman() {
-        String wort ="Hallo";
-        String[] buchstabe;
-        buchstabe = new String [wort.length()];
+    public hangman() throws IOException {
+        BufferedReader ausleser = new BufferedReader(new FileReader("src/hangman/wortliste.txt"));
+
+        String ausgesuchteswort="";
+
+
+        try {
+            ausgesuchteswort= ausleser.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        String finalAusgesuchteswort = ausgesuchteswort;
+
+         wort =ausgesuchteswort;
+
 
         knopf.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                System.out.println(finalAusgesuchteswort);
+                int zeile=0;
+                double zufallszahld=Math.random()*100000+5*Math.random()*200-10*Math.random()*100;
+                int zufallszahl =(int) zufallszahld;
+
+                       try {
+                           for (String aktuellesWort = ausleser.readLine(); aktuellesWort != null; aktuellesWort = ausleser.readLine()) {
+                               while (zeile != zufallszahl) {
+                                   zeile = zeile + 1;
+                                   wort = ausleser.readLine();
+
+                               }}
+                           } catch(IOException ex){
+                               throw new RuntimeException(ex);
+                           }
+                buchstabe = new String [wort.length()];
+
+
 
                 b1.setText("");
                for(int i=0;i<wort.length();i++){
@@ -34,6 +74,9 @@ public class hangman {
                    versuchefeld.setText("");
                    buchstabenchecker.setText("");
                    versuchsanzahl=0;
+                   zeile=0;
+                   zufallszahl=0;
+                   fehleranzahl=0;
                }
 
             }
@@ -52,11 +95,13 @@ public class hangman {
                 }else {
                     if (wort.indexOf(versuchgroß) == -1 && wort.indexOf(versuchklein) == -1) {
                         String platzhalter2 = versuchefeld.getText();
+                         fehleranzahl=fehleranzahl +1;
                         if (!platzhalter2.equals("")) {
                             versuchefeld.setText(versuchefeld.getText() + "," + versuch);
                         } else {
                             versuchefeld.setText(versuch);
                         }
+
                     }
                     if (versuch.length() == 1) {
                         for (int i = 0; i < wort.length(); i++) {
@@ -70,8 +115,11 @@ public class hangman {
 
                             }
 
+
                         }
+
                     }
+
 
 
                     b1.setText("");
@@ -87,13 +135,16 @@ public class hangman {
 
                     }
                 }
+                if(versuchefeld.getText().length()==19){
+                    buchstabenchecker.setText("Du hast "+ fehleranzahl +" Fehler gemacht. Probier es nochmal.");
+                }
 
 
             }
         });
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         JFrame frame = new JFrame("hangman");
         frame.setContentPane(new hangman().panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -101,7 +152,5 @@ public class hangman {
         frame.setVisible(true);
     }
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
+
 }
