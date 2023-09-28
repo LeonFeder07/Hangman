@@ -80,7 +80,11 @@ public class hangman {
                 String versuchklein = versuch.toLowerCase();
                 if (versuchklein.equals(wort.toLowerCase())) {
                     b1.setText(wort);
-                    buchstabenchecker.setText("Du hast nur " + versuchsanzahl + " Versuch(e) gebraucht");
+                    if(versuchsanzahl==1) {
+                        buchstabenchecker.setText("Du hast nur " + versuchsanzahl + " Versuch gebraucht");
+                    }else{
+                        buchstabenchecker.setText("Du hast nur " + versuchsanzahl + " Versuche gebraucht");
+                    }
 
                 } else {
                     if (wort.indexOf(versuchgroß) == -1 && wort.indexOf(versuchklein) == -1) {
