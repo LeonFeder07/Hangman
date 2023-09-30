@@ -118,7 +118,31 @@ public class hangman {
 
                     }
                     if(fehleranzahl==7){
-                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |         |\n                              |\n                              |\n                              |\n                              |   \n  ==================  ");
+                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |        |\n                              |\n                              |\n                              |\n                              |   \n  ==================  ");
+
+                    }
+                    if(fehleranzahl==8){
+                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |        |\n                    o        |\n                              |\n                              |\n                              |   \n  ==================  ");
+
+                    }
+                    if(fehleranzahl==9){
+                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |        |\n                    o        |\n                     |        |\n                              |\n                              |   \n  ==================  ");
+
+                    }
+                    if(fehleranzahl==10){
+                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |        |\n                    o        |\n                   / |        |\n                              |\n                              |   \n  ==================  ");
+
+                    }
+                    if(fehleranzahl==11){
+                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |        |\n                    o        |\n                   / | °      |\n                              |\n                              |   \n  ==================  ");
+
+                    }
+                    if(fehleranzahl==12){
+                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |        |\n                    o        |\n                   / | °      |\n                   /          |\n                              |   \n  ==================  ");
+
+                    }
+                    if(fehleranzahl==13){
+                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |        |\n                    o        |\n                   / | °      |\n                   /  °       |\n                              |   \n  ==================  ");
 
                     }
                     if (versuch.length() == 1) {
