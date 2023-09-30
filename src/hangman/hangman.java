@@ -25,10 +25,12 @@ public class hangman {
     String wort;
     String[] buchstabe;
     int fehleranzahl = 0;
+    double zufallszahld =0;
+
 
 
     public hangman() throws IOException {
-        BufferedReader ausleser = new BufferedReader(new FileReader("src/hangman/wortliste.txt"));
+
 
 
         wort = "";
@@ -37,23 +39,11 @@ public class hangman {
         knopf.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                int zeile = 0;
-                double zufallszahld = Math.random() * 120000 + 5 * Math.random() * 200 - 10 * Math.random() * 100;
-                int zufallszahl = (int) zufallszahld;
-
                 try {
-                    for (String aktuellesWort = ausleser.readLine(); aktuellesWort != null; aktuellesWort = ausleser.readLine()) {
-                        while (zeile != zufallszahl) {
-                            zeile = zeile + 1;
-                            wort = ausleser.readLine();
-
-                        }
-                    }
+                    zufallszahlgenerieren();
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
-                buchstabe = new String[wort.length()];
 
 
                 b1.setText("");
@@ -64,8 +54,7 @@ public class hangman {
                     versuchefeld.setText("");
                     buchstabenchecker.setText("");
                     versuchsanzahl = 0;
-                    zeile = 0;
-                    zufallszahl = 0;
+
                     fehleranzahl = 0;
                 }
 
@@ -135,6 +124,26 @@ public class hangman {
 
             }
         });
+    }
+    public void zufallszahlgenerieren() throws IOException{
+        BufferedReader ausleser = new BufferedReader(new FileReader("src/hangman/wortliste.txt"));
+        zufallszahld = Math.random() * 120000 + 5 * Math.random() * 200 - 10 * Math.random() * 100;
+        int zeile = 0;
+
+        int zufallszahl = (int) zufallszahld;
+
+        try {
+            for (String aktuellesWort = ausleser.readLine(); aktuellesWort != null; aktuellesWort = ausleser.readLine()) {
+                while (zeile != zufallszahl) {
+                    zeile = zeile + 1;
+                    wort = ausleser.readLine();
+
+                }
+            }
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        buchstabe = new String[wort.length()];
     }
 
     public static void main(String[] args) throws IOException {
