@@ -21,6 +21,7 @@ public class hangman {
     private JLabel h;
     private JTextField versuchefeld;
     private JLabel label;
+    private JTextArea textArea1;
     int versuchsanzahl = 0;
     String wort;
     String[] buchstabe;
@@ -30,7 +31,7 @@ public class hangman {
 
 
     public hangman() throws IOException {
-
+        textArea1.setText ("\n\n\n\n\n\n\n\t\t\t\n\n\n\n\n\n  ==================  ");
 
 
         wort = "";
@@ -56,6 +57,7 @@ public class hangman {
                     versuchsanzahl = 0;
 
                     fehleranzahl = 0;
+                    textArea1.setText ("\n\n\n\n\n\n\n\t\t\t\n\n\n\n\n\n  ==================  ");
                 }
 
             }
@@ -63,6 +65,10 @@ public class hangman {
         check.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                //String hANGMANPICS = "\n\n\n\n\n\n\n\n\n\n\t\t\t+-------+\n\t\t\t |          |\n\t\t\t            |\n\t\t\t            |\n\t\t\t            |\n\t\t\t            |\n=======================================================================================";
+                //textArea1.setText(hANGMANPICS);
+
                 versuchsanzahl = versuchsanzahl + 1;
                 String versuch = buchstabenchecker.getText();
                 String versuchgroß = versuch.toUpperCase();
@@ -79,11 +85,40 @@ public class hangman {
                     if (wort.indexOf(versuchgroß) == -1 && wort.indexOf(versuchklein) == -1) {
                         String platzhalter2 = versuchefeld.getText();
                         fehleranzahl = fehleranzahl + 1;
+
                         if (!platzhalter2.equals("")) {
                             versuchefeld.setText(versuchefeld.getText() + "," + versuch);
                         } else {
                             versuchefeld.setText(versuch);
                         }
+
+                    }
+                    if(fehleranzahl==1){
+                        textArea1.setText ("\n\n\n\n\n\n\n\t\t\t\n\n\n\n \n                              |   \n  ==================  ");
+
+                    }
+                    if(fehleranzahl==2){
+                        textArea1.setText ("\n\n\n\n\n\n\t\t\t\n\n\n\n \n                              |\n                              |   \n  ==================  ");
+
+                    }
+                    if(fehleranzahl==3){
+                        textArea1.setText ("\n\n\n\n\n\t\t\t\n\n\n\n \n                              |\n                              |\n                              |   \n  ==================  ");
+
+                    }
+                    if(fehleranzahl==4){
+                        textArea1.setText ("\n\n\n\n\n\t\t\t\n\n\n \n                              |\n                              |\n                              |\n                              |   \n  ==================  ");
+
+                    }
+                    if(fehleranzahl==5){
+                        textArea1.setText ("\n\n\n\n\n\t\t\t\n\n \n                              |\n                              |\n                              |\n                              |\n                              |   \n  ==================  ");
+
+                    }
+                    if(fehleranzahl==6){
+                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                              |\n                              |\n                              |\n                              |\n                              |   \n  ==================  ");
+
+                    }
+                    if(fehleranzahl==7){
+                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |         |\n                              |\n                              |\n                              |\n                              |   \n  ==================  ");
 
                     }
                     if (versuch.length() == 1) {
@@ -113,12 +148,17 @@ public class hangman {
                     }
                     if (b1.getText().indexOf("_") == -1) {
                         b1.setText(wort);
-                        buchstabenchecker.setText("Du hast nur " + versuchsanzahl + " Versuch(e) gebraucht");
+                        if(versuchsanzahl==1) {
+                            buchstabenchecker.setText("Du hast nur " + versuchsanzahl + " Versuch gebraucht");
+                        }else{
+                            buchstabenchecker.setText("Du hast nur " + versuchsanzahl + " Versuche gebraucht");
+                        }
 
                     }
                 }
-                if (versuchefeld.getText().length() == 19) {
-                    buchstabenchecker.setText("Du hast " + fehleranzahl + " Fehler gemacht. Probier es nochmal.");
+                if (fehleranzahl == 13) {
+                    buchstabenchecker.setText("Du hast " + fehleranzahl + " Fehler gemacht. Probier ein neues Wort.");
+                    b1.setText(wort);
                 }
 
 
@@ -127,7 +167,7 @@ public class hangman {
     }
     public void zufallszahlgenerieren() throws IOException{
         BufferedReader ausleser = new BufferedReader(new FileReader("src/hangman/wortliste.txt"));
-        zufallszahld = Math.random() * 120000 + 5 * Math.random() * 200 - 10 * Math.random() * 100;
+        zufallszahld = Math.random() * 150000 + 12 * Math.random() * 200 - 10 * Math.random() * 100;
         int zeile = 0;
 
         int zufallszahl = (int) zufallszahld;

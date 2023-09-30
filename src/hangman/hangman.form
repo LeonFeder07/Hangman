@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="hangman.hangman">
-  <grid id="27dc6" binding="panel" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="5" vgap="10">
+  <grid id="27dc6" binding="panel" layout-manager="GridLayoutManager" row-count="6" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="5" vgap="10">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="45" y="95" width="1474" height="760"/>
+      <xy x="1" y="1" width="1774" height="800"/>
     </constraints>
     <properties>
       <background color="-4473925"/>
       <foreground color="-1"/>
-      <maximumSize width="1474" height="760"/>
-      <minimumSize width="1474" height="760"/>
-      <preferredSize width="1474" height="760"/>
+      <inheritsPopupMenu value="true"/>
+      <maximumSize width="1774" height="800"/>
+      <minimumSize width="1774" height="800"/>
+      <preferredSize width="1774" height="800"/>
       <visible value="true"/>
     </properties>
     <border type="none"/>
@@ -122,6 +123,36 @@
           <margin top="2" left="6" bottom="2" right="6"/>
         </properties>
       </component>
+      <component id="c623" class="javax.swing.JLabel" binding="label">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="146" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-16777216"/>
+          <font name="Comic Sans MS" size="26" style="2"/>
+          <foreground color="-16777216"/>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
+          <labelFor value="b30bf"/>
+          <text value="Bitte einen Buchstaben oder ein Wort hier eingeben"/>
+        </properties>
+      </component>
+      <component id="8241" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+        <constraints>
+          <grid row="1" column="3" row-span="5" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12236470"/>
+          <caretColor color="-1"/>
+          <editable value="false"/>
+          <font name="Arial Black" size="22" style="1"/>
+          <foreground color="-1052689"/>
+        </properties>
+      </component>
       <component id="d1cf0" class="javax.swing.JLabel" binding="hangman">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="0" indent="0" use-parent-layout="false">
@@ -141,22 +172,6 @@
           <horizontalTextPosition value="0"/>
           <icon value="heading.drawio.png"/>
           <text value=""/>
-        </properties>
-      </component>
-      <component id="c623" class="javax.swing.JLabel" binding="label">
-        <constraints>
-          <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="146" height="16"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-16777216"/>
-          <font name="Comic Sans MS" size="26" style="2"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <horizontalTextPosition value="0"/>
-          <labelFor value="b30bf"/>
-          <text value="Bitte einen Buchstaben oder ein Wort hier eingeben"/>
         </properties>
       </component>
     </children>
