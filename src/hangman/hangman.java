@@ -73,6 +73,7 @@ public class hangman {
                 String versuch = buchstabenchecker.getText();
                 String versuchgroß = versuch.toUpperCase();
                 String versuchklein = versuch.toLowerCase();
+
                 if (versuchklein.equals(wort.toLowerCase())) {
                     b1.setText(wort);
                     if(versuchsanzahl==1) {
@@ -134,15 +135,15 @@ public class hangman {
 
                     }
                     if(fehleranzahl==11){
-                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |        |\n                    o        |\n                   / | °      |\n                              |\n                              |   \n  ==================  ");
+                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |        |\n                    o        |\n                   / | \\      |\n                              |\n                              |   \n  ==================  ");
 
                     }
                     if(fehleranzahl==12){
-                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |        |\n                    o        |\n                   / | °      |\n                   /          |\n                              |   \n  ==================  ");
+                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |        |\n                    o        |\n                   / | \\      |\n                    /         |\n                              |   \n  ==================  ");
 
                     }
                     if(fehleranzahl==13){
-                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |        |\n                    o        |\n                   / | °      |\n                   /  °       |\n                              |   \n  ==================  ");
+                        textArea1.setText ("\n\n\n\n\n\n\t\t\t \n                    +-------+ \n                     |        |\n                    o        |\n                   / | \\      |\n                    /  \\      |\n                              |   \n  ==================  ");
 
                     }
                     if (versuch.length() == 1) {
