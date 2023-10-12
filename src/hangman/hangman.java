@@ -66,8 +66,7 @@ public class hangman {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                //String hANGMANPICS = "\n\n\n\n\n\n\n\n\n\n\t\t\t+-------+\n\t\t\t |          |\n\t\t\t            |\n\t\t\t            |\n\t\t\t            |\n\t\t\t            |\n=======================================================================================";
-                //textArea1.setText(hANGMANPICS);
+
 
                 versuchsanzahl = versuchsanzahl + 1;
                 String versuch = buchstabenchecker.getText();
