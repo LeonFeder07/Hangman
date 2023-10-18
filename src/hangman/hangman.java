@@ -60,6 +60,8 @@ public class hangman {
                     textArea1.setText ("\n\n\n\n\n\n\n\t\t\t\n\n\n\n\n\n  ==================  ");
                 }
 
+                versuchefeld.setEditable(true);
+
             }
         });
         check.addActionListener(new ActionListener() {
@@ -77,8 +79,10 @@ public class hangman {
                     b1.setText(wort);
                     if(versuchsanzahl==1) {
                         buchstabenchecker.setText("Du hast nur " + versuchsanzahl + " Versuch gebraucht");
+                        versuchefeld.setEditable(false);
                     }else{
                         buchstabenchecker.setText("Du hast nur " + versuchsanzahl + " Versuche gebraucht");
+                        versuchefeld.setEditable(false);
                     }
 
                 } else {
@@ -174,8 +178,10 @@ public class hangman {
                         b1.setText(wort);
                         if(versuchsanzahl==1) {
                             buchstabenchecker.setText("Du hast nur " + versuchsanzahl + " Versuch gebraucht");
+                            versuchefeld.setEditable(false);
                         }else{
                             buchstabenchecker.setText("Du hast nur " + versuchsanzahl + " Versuche gebraucht");
+                            versuchefeld.setEditable(false);
                         }
 
                     }
